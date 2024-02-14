@@ -11,6 +11,7 @@ no processo de controle de versão e colaboração:
 
 **Git:** É um sistema de controle de versão distribuido que permite rastrear as mudanças no código-fonte ao longo do tempo. Ele funciona localmente no computador
 permitindo o controle e versionamento local, mesmo desconectado da internet. Com o git é possível criar commits, branches, mesclar códigos e reverter alterações.
+
 **GitHub:**  É uma plataforma online de hospedagem de código que utiliza o Git como sistema de controle de versão. O GitHub oferece recursos adicionais, como rastreamento de problemas,
 solicitações de pull e integração contínua, mas principalmente facilita a colaboração entre os membros da equipe por promover o projeto online e acessível a todos que irão trabalhar nele.
 
