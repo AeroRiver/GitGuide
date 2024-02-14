@@ -184,6 +184,25 @@ git pull origin <branch-remota> -- Esse comando irá buscar e integrar as altera
 
 ---
 
+## Usando na prática:
+
+Os repositórios de desenvolvimento da AeroRiver possuem um fluxo de trabalho proprio com branches e ramificações específicas. A seguir, veremos em um cenário prático de como utilizar o git para trabalhar com esses repositórios:
+
+- ```git clone``` para clonar o repositório e ```git checkout develop``` para trocar para a branch de desenvolvimento.
+- Caso já tenha o repositório clonado: ```git checkout develop``` e  ```git pull origin develop``` para rastrear e trabalhar com a versão mais recente do código.
+- Vai precisar trocar de branch? ```git stash``` para não perder o trabalho até o momento e depois ```git stash apply``` para continuar de onde parou.
+- Ao termino do desenvolvimento dos códigos é hora de atualizar a branch remota, respeitando as regras de negócio do repositório: ```git checkout -b <solução>_develop``` para criar
+a branch com a solução desenvolvida, depois ```git add``` para adicionar os arquivos que vão pro commit e por fim ```git commit -m "<mensagem>"```. Commit criado, use ```git push origin <solução>_develop```
+para enviar as alterações para a nova branch```.
+- Com isso, basta criar o Pull request da nova branch para a develop no GitHub e para manter a sua branch develop sempre atualizada:
+```bash
+git checkout develop
+git merge <solução>_develop
+git branch -d <solução>_develop
+```
+
+---
+
 O Git e GitHub são ferramentas muito interessantes e possuem muito mais funcionalidades e caracteristicas além dessas descritas nesse guia e para dominar e entender melhor o funcionamento é necessário sempre acompanhar a documentação
 das mesmas. Outros comandos que aqui nao foram descritos mas que podem ser úteis em vários contextos são o git rebase e git reset. Esse é apenas um guia simples e prático sobre os principais comandos de git para uso rotineiro no desenvolvimento
 de projetos na AeroRiver.
