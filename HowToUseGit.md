@@ -112,6 +112,18 @@ git stash pop <identificador-do-stash> -- Aplica o stash e o exclui da lista.
 git stash drop <identificador-do-stash> -- Remove um stash da lista.
 ```
 
+## ```git diff```
+
+Na série de comandos úteis, o git diff é usado para mostrar as diferenças entre as mudanças que foram feitas em arquivos no seu diretório e as versões anteriores desses arquivos que estao **staged**
+ou que ja sofreram commit.
+
+### Sintaxe:
+
+```
+git diff -- Mostra todas as diferenças de todos os arquivos
+git diff <arquivo> -- Mostra as diferenças apenas do arquivo especificado.
+```
+
 ## Trabalhando com repositórios remotos
     
 Até o momento, os comandos descritos não necessariamente precisam de um reposítorio remoto ou GitHub para serem executados. Eles funcionam e oferecem um ótimo suporte para versionamento local
@@ -193,7 +205,7 @@ Os repositórios de desenvolvimento da AeroRiver possuem um fluxo de trabalho pr
 - Vai precisar trocar de branch? ```git stash``` para não perder o trabalho até o momento e depois ```git stash apply``` para continuar de onde parou.
 - Ao termino do desenvolvimento dos códigos é hora de atualizar a branch remota, respeitando as regras de negócio do repositório: ```git checkout -b <solução>_develop``` para criar
 a branch com a solução desenvolvida, depois ```git add``` para adicionar os arquivos que vão pro commit e por fim ```git commit -m "<mensagem>"```. Commit criado, use ```git push origin <solução>_develop```
-para enviar as alterações para a nova branch```.
+para enviar as alterações para a nova branch.
 - Com isso, basta criar o Pull request da nova branch para a develop no GitHub e para manter a sua branch develop sempre atualizada:
 ```bash
 git checkout develop
